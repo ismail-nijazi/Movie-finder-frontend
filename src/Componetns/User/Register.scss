@@ -1,0 +1,37 @@
+.LoginPage {
+    .RegisterForm {
+        width: 700px;
+        height: 900px;
+        position: relative;
+
+        #closeLogin {
+            position: absolute;
+            top: 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .LoginPage {
+        .RegisterForm {
+            width: 100vw;
+            height: 100vh;
+            justify-content: flex-start;
+            align-items: center;
+            #closeLogin {
+                position: relative;
+            }
+            form {
+                width: 80%;
+                .row * {
+                    width: 100%;
+                    text-align: left;
+                }
+
+                .row .link {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+    }
+}

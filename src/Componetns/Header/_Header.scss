@@ -1,0 +1,52 @@
+@import "../config";
+
+header {
+    display: flex;
+    justify-content: center;
+    section {
+        position: relative;
+        width: 90%;
+        .title {
+            border-bottom: $primaryTextColor 1px solid;
+            margin-bottom: 2rem;
+            color: darken($primaryTextColor, 10%);
+        }
+        .MS-content {
+            margin: 0 10%;
+            white-space: nowrap;
+            min-height: 415px;
+            overflow-x: hidden;
+            .item {
+                @extend %movie;
+            }
+        }
+        .MS-controls {
+            button {
+                background: none;
+                color: $primaryTextColor;
+                border: 0;
+                cursor: pointer;
+                &:hover {
+                    color: $primaryColor;
+                }
+            }
+            .MS-left {
+                position: absolute;
+                left: 0;
+                top: 60%;
+            }
+
+            .MS-right {
+                position: absolute;
+                right: 0;
+                top: 60%;
+                z-index: 10;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    header section .MS-content {
+        height: 400px;
+    }
+}

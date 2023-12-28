@@ -1,0 +1,63 @@
+@import "../config";
+
+.searchResultsSection {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    animation-name: apear;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    & > h5 {
+        text-align: center;
+        color: darken($primaryTextColor, 10%);
+        padding: 20px;
+        font-size: 1.4rem;
+        letter-spacing: 0.2rem;
+        .searchQuery {
+            font-size: 24px;
+            padding: 10px;
+            display: inline;
+            color: $hoverColor;
+        }
+    }
+    ul {
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+    .searchResults {
+        transition: transform 0.5s;
+        .item {
+            @extend %movie;
+        }
+        figure {
+            margin: 5rem auto;
+            max-width: 800px;
+            img {
+                width: 100%;
+            }
+            h4 {
+                font-weight: 300;
+                font-size: 1.5rem;
+                width: fit-content;
+                padding: 0 1rem;
+                margin: auto;
+            }
+        }
+    }
+
+    @keyframes apear {
+        0% {
+            opacity: 0.1;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .searchResultsSection {
+        width: 90%;
+    }
+}

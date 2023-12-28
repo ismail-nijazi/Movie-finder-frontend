@@ -1,0 +1,70 @@
+@import "../config";
+
+.searchContainer {
+    width: 70%;
+    margin: 100px auto;
+
+    .searchForm {
+        position: relative;
+        .searchError {
+            display: block;
+            text-align: center;
+            margin: 1rem auto;
+            color: lighten($primaryColor, 5%);
+        }
+        div {
+            display: flex;
+            justify-content: center;
+            input {
+                color: $primaryTextColor;
+                padding: 10px 30px;
+                font-size: 1.2rem;
+                border-radius: 40px 0px 0px 40px;
+                width: 80%;
+                background-color: $primaryColor;
+                border: darken($primaryTextColor, 20%) 1px solid;
+                border-right: none;
+                outline: none;
+                &::placeholder {
+                    color: $primaryTextColor;
+                    opacity: 1;
+                }
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 1.1rem;
+                cursor: pointer;
+                border: darken($primaryTextColor, 20%) 1px solid;
+                outline: none;
+                border-left: none;
+                border-radius: 0 40px 40px 0;
+                background-color: $primaryBgColor;
+                color: $primaryTextColor;
+                & > i {
+                    padding: 5px;
+                    transition: transform 0.5s;
+                }
+                &:hover i {
+                    transform: rotate(60deg);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .searchContainer {
+        width: 96%;
+        .searchForm button {
+            font-size: 1rem;
+            cursor: pointer;
+            i {
+                display: none;
+            }
+        }
+        input {
+            font-size: 1.1rem;
+            width: 80%;
+        }
+    }
+}

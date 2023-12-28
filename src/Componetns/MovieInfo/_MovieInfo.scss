@@ -1,0 +1,138 @@
+@import "../config";
+
+.MovieInfo {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5rem;
+    animation-name: extendWidth;
+    animation-duration: 1s;
+    @keyframes extendWidth {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    div:first-child {
+        padding: 30px 0;
+    }
+    & > figure {
+        display: inline-block;
+        margin-top: 30px;
+        width: 35%;
+        img {
+            width: 100%;
+            border: $primaryTextColor 1px solid;
+            box-shadow: 3px 3px 10px #000;
+        }
+    }
+    .backButton {
+        padding: 5px 15px;
+        font-size: 1.2rem;
+        color: $primaryTextColor;
+        cursor: pointer;
+        & > i {
+            padding-right: 10px;
+        }
+        &:hover > i {
+            transform: translateX(-5px);
+        }
+    }
+
+    .inforamtion {
+        display: inline-block;
+        vertical-align: top;
+        width: 60%;
+        padding: 0px 20px;
+
+        .bookmarkButton {
+            display: inline;
+            color: $primaryColor;
+            margin-left: 20px;
+            cursor: pointer;
+            i {
+                font-size: 1.6rem;
+            }
+        }
+
+        .bookmarkButton:hover {
+            color: $hoverColor;
+        }
+        .fa-imdb {
+            color: #e4c435;
+            font-size: 1.3rem;
+            padding-left: 10px;
+        }
+        .movieTitle > h3 {
+            display: inline;
+            color: $primaryColor;
+            font-size: 1.4rem;
+        }
+        .runTime {
+            padding: 0px 0 20px;
+            color: darken($primaryColor, 10%);
+            i {
+                font-size: 1.2rem;
+            }
+            span {
+                margin-left: 10px;
+                font-size: 1.2rem;
+            }
+        }
+        ul > li {
+            padding-bottom: 3px;
+            color: darken($primaryTextColor, 30%);
+            .infoText {
+                color: darken($primaryTextColor, 5%);
+                padding-left: 10px;
+            }
+            .summary {
+                padding: 40px 0;
+                color: $primaryTextColor;
+            }
+            .actors {
+                color: darken($primaryTextColor, 30%);
+            }
+        }
+        .actorsList > h3 {
+            color: $primaryTextColor;
+            margin-top: 20px;
+        }
+        .redirecButton {
+            display: block;
+            width: fit-content;
+            background-color: $hoverColor;
+            color: #000000;
+            padding: 10px 30px;
+            margin: 50px auto 0;
+            border-radius: 5px;
+            transition: background-color 0.5s;
+            text-align: center;
+            &:hover {
+                background-color: $primaryColor;
+            }
+            & > i {
+                padding-left: 10px;
+                color: #000000;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .MovieInfo {
+        width: 100%;
+        & > figure {
+            display: block;
+            width: 60%;
+            margin: 2rem auto;
+        }
+        .inforamtion {
+            width: 100%;
+            .movieTitle > h3 {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}

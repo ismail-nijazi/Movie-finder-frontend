@@ -1,0 +1,66 @@
+$primaryColor: #dc4444;
+$primaryTextColor: #eee;
+$hoverColor: #eb7777;
+$primaryBgColor: #26282b;
+
+.fa-star {
+    color: #e4c435;
+}
+
+.rating {
+    margin-left: 2%;
+}
+
+%movie {
+    margin: 0 10px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1;
+    height: 410px;
+    width: 255px;
+    overflow: hidden;
+    vertical-align: top;
+    & a > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.5s;
+    }
+    & img:hover {
+        transform: scale(1.05);
+    }
+    details {
+        color: $primaryTextColor;
+        position: absolute;
+        height: 30%;
+        width: 100%;
+        bottom: 0;
+        cursor: default;
+        background-color: rgba(38, 40, 43, 0.8);
+        summary {
+            height: 100%;
+            white-space: normal;
+            padding: 10px;
+            .Genre {
+                color: $primaryColor;
+                font-size: 0.8rem;
+            }
+            h4 {
+                color: darken($primaryTextColor, 10%);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    %movie {
+        width: 47%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    %movie {
+        width: 100%;
+    }
+}

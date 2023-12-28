@@ -1,0 +1,98 @@
+@import "../config";
+
+.bookmarksContainer {
+    width: 300px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 120px;
+    .bookmarks {
+        width: 100%;
+        min-width: 100%;
+        height: 400px;
+        background-color: lighten($primaryBgColor, 10%);
+        transition: all 1s;
+        position: relative;
+        z-index: 100;
+        overflow-y: scroll;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .bookmarkTitle {
+            background-color: darken($primaryBgColor, 10%);
+            color: darken($primaryTextColor, 10%);
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 100;
+            border-bottom: lighten($primaryBgColor, 10%) 5px solid;
+        }
+        #bookmarksList {
+            .bookmark {
+                a {
+                    background-color: $primaryColor;
+                    padding: 5px;
+                    margin: 2%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    text-align: left;
+                    color: darken($primaryTextColor, 5%);
+                    cursor: pointer;
+                    position: relative;
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 0%;
+                        height: 100%;
+                        background-color: #000;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        opacity: 0.3;
+                        transition: width 0.5s;
+                    }
+
+                    &:hover::before {
+                        width: 100%;
+                    }
+
+                    img {
+                        width: 70px;
+                        padding-right: 10px;
+                    }
+                    .rating {
+                        font-size: 0.9rem;
+                        color: #000;
+                    }
+                    div {
+                        width: 200px;
+                        font-family: Arial, sans-serif;
+                    }
+                }
+            }
+        }
+
+        .emptyBookmark {
+            color: $primaryTextColor;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+        }
+        .Line {
+            height: 10px;
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: lighten($primaryBgColor, 10%) 5px solid;
+        }
+    }
+}

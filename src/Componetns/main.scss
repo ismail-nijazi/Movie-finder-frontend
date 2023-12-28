@@ -1,0 +1,110 @@
+@import "./config";
+@import "Navbar/Navbar";
+@import "Header/Header";
+@import "WatchList/WatchList";
+@import "SearchResult/SearchResult";
+@import "Searchbar/Searchbar";
+@import "MovieInfo/MovieInfo";
+@import "Pagination/Pagination";
+@import "Spinner/Spinner";
+@import "User/Login";
+@import "User/Register";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Titillium Web", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    text-align: center;
+}
+
+body {
+    background-color: $primaryBgColor;
+    overflow-x: hidden;
+    background-attachment: fixed;
+}
+
+main {
+    color: $primaryTextColor;
+    width: 92%;
+    margin: 0 auto;
+}
+
+.logo {
+    img {
+        width: 100px;
+    }
+}
+
+.bookmarksHidden {
+    transform: translateX(500px);
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.btn {
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: lighten($primaryColor, 10%) 1px solid;
+    border-radius: 5px;
+    color: lighten($primaryColor, 10%);
+    background: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+        color: darken($primaryTextColor, 10%);
+        background-color: lighten($primaryColor, 2%);
+    }
+}
+
+.link {
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #04366e;
+    font-size: 1rem;
+    cursor: pointer;
+    &:hover {
+        color: #196bc9;
+    }
+}
+
+.error {
+    position: fixed;
+    top: 2rem;
+    width: 200px;
+}
+.error_message {
+    width: 100%;
+    text-align: left;
+    color: darken(red, 18%);
+}
+
+@media only screen and (max-width: 480px) {
+    .btn {
+        padding: 5px 10px;
+    }
+}
